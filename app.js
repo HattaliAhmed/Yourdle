@@ -55,6 +55,8 @@ for (i = 0; i < keys.length; i++){
     for (j = 0; j < keys[i].length; j++){
         r.appendChild(key.cloneNode(true));
         r.lastChild.innerText = keys[i][j];
+        r.lastChild.classList.add(keys[i][j]);
+
     }
     if (i == 2) {
         r.appendChild(key.cloneNode(true));
@@ -96,6 +98,7 @@ document.querySelectorAll('.tile').forEach(tile => {
         tile.style.width = x;
         tile.style.height = x;
         tile.style.lineHeight = x;
+        tile.style.fontSize = 1.2+'em';
     }
     else {
         tile.style.width = 62 + 'px';
@@ -188,15 +191,22 @@ function check() {
             if (g[i] == word[i]) {
                 correct.push(i);
                 tiles[i + (line * 5)].classList.add('correct');
+                document.getElementsByClassName(g[i])[0].classList.add('exist');
             }
             else if (g[i] != word[i]) {
                 if ((word.indexOf(g[i]) != -1) && (exist.indexOf(g[i]) == -1)
                     && countInArray(correct, g[i]) < countInArray(word.split(''), g[i])) {
                     exist.push(i);
                     tiles[i + (line * 5)].classList.add('exist');
-                }
+                    document.getElementsByClassName(g[i])[0].classList.add('exist');
+                } else {
+                    tiles[i + (line * 5)].classList.add('wrong');
+                    console.log(g[i])
+                    document.getElementsByClassName(g[i]+"")[0].classList.add('wrong');
+                }             
             }
         }
+
         line++;
         letter_count = 0;
         guess = [];

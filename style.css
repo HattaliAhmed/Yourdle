@@ -53,11 +53,13 @@ html{
 }
 
 .correct{
-    background-color: #447e3e;
+    background-color: #447e3e !important;
 }
-
 .exist{
-    background-color: #a5902e;
+    background-color: #a5902e !important;
+}
+.wrong{
+    background-color: #333333 !important;
 }
 
 .keyboard{
