@@ -87,7 +87,6 @@ var k = document.querySelector(".keyboard").offsetTop;
 var h = document.querySelector(".header").offsetHeight; 
 
 if (k - h < width) { 
-console.log(true)
 document.querySelectorAll('.tile').forEach(tile => {
     if (((k - h) / 8) < 62) {
         const x = (k - h) / 8 + 'px';
