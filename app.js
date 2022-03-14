@@ -5,7 +5,7 @@ if (window.location.hash.length === 0) {
     document.getElementsByClassName('copy')[0].style.display = "block";
 }
 else {
-    word = atob(window.location.hash.substring(1))
+    word = atob(window.location.hash.substring(1)).toLowerCase()
     if (word.length === 5) {
         newgame = 0;
     }
