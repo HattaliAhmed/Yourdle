@@ -178,11 +178,14 @@ function check() {
             tiles[i + (line * 5)].classList.add('correct');
         }
         document.getElementsByClassName('win')[0].style.display = "flex";
-        //alert("you win");
     }
     // check if the guess is a correct word in the world-list
     else if (words.indexOf(g) == -1) {
-        alert("Not a word");
+        document.getElementsByClassName('nope')[0].style.display = "flex";
+        setTimeout(function () {
+        document.getElementsByClassName('nope')[0].style.display = "none";
+        }, 500);
+
     }
     else {
         correct = [] // all the correct letters in the correct place
