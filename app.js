@@ -85,6 +85,23 @@ document.querySelectorAll('.tile').forEach(tile => {
 */
 var k = document.querySelector(".keyboard").offsetTop; 
 var h = document.querySelector(".header").offsetHeight; 
+
+if (k - h < width) { 
+console.log(true)
+document.querySelectorAll('.tile').forEach(tile => {
+    if (((k - h) / 8) < 62) {
+        const x = (k - h) / 8 + 'px';
+        tile.style.width = x;
+        tile.style.height = x;
+        tile.style.lineHeight = x;
+    }
+    else {
+        tile.style.width = 62 + 'px';
+        tile.style.height = 62 + 'px';
+
+    }
+});
+}
 var gh = document.querySelector(".grid").offsetHeight; 
 var d = k - h - gh;
 g = document.querySelector('.grid');
