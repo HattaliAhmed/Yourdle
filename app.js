@@ -171,8 +171,9 @@ document.addEventListener('keyup', (e) => {
 });
 
 function check() {
-    var g = guess.join("") // guessed word
+    var g = guess.join("").toString().toLowerCase() // guessed word
     // check if the whole guess is correct
+    console.log(g)
     if (g == word) {
         for (let i = 0; i < 5; i++) {
             tiles[i + (line * 5)].classList.add('correct');
