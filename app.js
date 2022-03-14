@@ -44,7 +44,9 @@ for (i = 0; i < keys.length; i++){
         r.lastChild.classList.add("enter");
 
         if (newgame == 1) {
-            r.lastChild.innerText = "Share";
+            r.lastChild.innerText = "";
+            r.lastChild.classList.add("disabled");
+
         } else {
             r.lastChild.innerText = "Enter";
 
