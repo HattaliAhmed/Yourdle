@@ -90,7 +90,6 @@ var k = document.querySelector(".keyboard").offsetTop;
 var h = document.querySelector(".header").offsetHeight; 
 
 if (k - h < width) { 
-    console.log(true)
 document.querySelectorAll('.tile').forEach(tile => {
     if (((k - h) / 8) < 62) {
         const x = (k - h) / 8 + 'px';
@@ -172,7 +171,6 @@ document.addEventListener('keyup', (e) => {
 function check() {
     var g = guess.join("").toString().toLowerCase() // guessed word
     // check if the whole guess is correct
-    console.log(g)
     if (g == word) {
         for (let i = 0; i < 5; i++) {
             tiles[i + (line * 5)].classList.add('correct');
@@ -204,13 +202,15 @@ function check() {
                     document.getElementsByClassName(g[i])[0].classList.add('exist');
                 } else {
                     tiles[i + (line * 5)].classList.add('wrong');
-                    console.log(g[i])
                     document.getElementsByClassName(g[i]+"")[0].classList.add('wrong');
                 }             
             }
         }
 
         line++;
+        if (line > 5) {
+            document.getElementsByClassName('loose')[0].style.display = "flex";
+        }
         letter_count = 0;
         guess = [];
     }
@@ -220,14 +220,16 @@ function countInArray(array, what) {
     return array.filter(item => item == what).length;
 }
 
-document.getElementsByClassName('close')[0].addEventListener('click', function () {
-    document.getElementsByClassName('popup')[0].style.display = "none";
-});
+function close_popup(wl) {
+    document.getElementsByClassName(wl)[0].style.display = "none";
+}
 
-document.getElementsByClassName('new')[0].addEventListener('click', function () {
+function newGame(){
     window.location.hash = "";
     location.reload();
-});
+}
+
+
 
 document.getElementsByClassName('copy')[0].addEventListener('click', function () {
     document.getElementsByClassName('copy')[0].innerHTML = "Copied! ✅";

@@ -25,8 +25,17 @@
         <div class="popup win">
             <div class="popupcontent">
                 You won!  🎉
-                <button class="new">Create a new game</button>
-                <button class="close">Close</button>
+                <button class="new" onclick="newGame()">Create a new game</button>
+                <button class="close" onclick="close_popup('win')">Close</button>
+            </div>
+        </div>
+
+        <div class="popup loose">
+            <div class="popupcontent">
+                You lost! 💀❌ </br>
+                <span class="small">Create a new game and let your friend try to guess your Wordle!</span> 
+                <button class="new" onclick="newGame()">Create a new game</button>
+                <button class="close" onclick="close_popup('loose')">Close</button>
             </div>
         </div>
 

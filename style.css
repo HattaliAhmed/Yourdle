@@ -137,9 +137,10 @@ html{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 10px;
+    padding: 20px;
     font-weight: bold;
     font-size: 24px;
+    box-shadow: 0px 0px 10px #000;
 }
 
 button{
@@ -174,8 +175,9 @@ h3{
     font-size: 1.5em;
     margin-bottom: 30px;
 }
-h3 .small{
+.small{
     font-size: 14px;
+    margin-top: 10px;
     font-weight: normal;
 }
 .grid-container{
