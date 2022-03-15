@@ -15,7 +15,6 @@ else {
 const grid = document.querySelector('.grid')
 const tile = document.createElement("div");
 tile.classList.add("tile");
-
 tiles_number = 5;
 if (newgame == 1)
     tiles_number = 5;
@@ -107,9 +106,9 @@ document.querySelectorAll('.tile').forEach(tile => {
     }
 });
 }
-var gh = document.querySelector(".grid").offsetHeight; 
+var gh = document.querySelector(".grid-container").offsetHeight; 
 var d = k - h - gh;
-g = document.querySelector('.grid');
+g = document.querySelector('.grid-container');
 g.style.marginTop = d / 2 + 'px';
 
 // Virtual Keyboard
@@ -231,11 +230,11 @@ document.getElementsByClassName('new')[0].addEventListener('click', function () 
 });
 
 document.getElementsByClassName('copy')[0].addEventListener('click', function () {
-    document.getElementsByClassName('copy')[0].innerHTML = "Copied!";
+    document.getElementsByClassName('copy')[0].innerHTML = "Copied! ✅";
     copyToClipboard(window.location.href.split("#")[0]+"#"+encodeURI(btoa(guess.join(""))))
     setTimeout(function () {
         document.getElementsByClassName('copy')[0].innerHTML = "Copy link";
-    }, 1000);
+    }, 3000);
 });
 
 function copyToClipboard(string) {

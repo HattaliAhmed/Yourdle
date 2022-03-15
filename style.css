@@ -169,3 +169,18 @@ button{
     background-color: #333333;
     cursor: default;
 }
+
+h3{
+    font-size: 1.5em;
+    margin-bottom: 30px;
+}
+h3 .small{
+    font-size: 14px;
+    font-weight: normal;
+}
+.grid-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
