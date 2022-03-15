@@ -2,6 +2,7 @@ let newgame = 0;
 var word
 if (window.location.hash.length === 0) {
     newgame = 1;
+    document.getElementsByTagName('h3')[0].style.display = "block";
     document.getElementsByClassName('copy')[0].style.display = "block";
 }
 else {
